@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
-import { ProductIllustration } from "@/components/product-illustration";
+import { ProductImage } from "@/components/product-image";
 import { PRODUCTS, formatIDR } from "@/lib/products";
 
 export const metadata: Metadata = {
@@ -36,9 +36,12 @@ export default function ProductsPage() {
                   aria-hidden
                 />
                 <div className="relative">
-                  <ProductIllustration
-                    variant={p.slug as "protein-oatmeal" | "fit-cookie"}
-                    className="w-full h-auto max-w-[260px] mx-auto"
+                  <ProductImage
+                    slug={p.slug}
+                    name={p.name}
+                    image={p.image}
+                    className="w-full max-w-[260px] mx-auto"
+                    sizes="(max-width: 640px) 260px, 300px"
                   />
                   <h2 className="mt-4 font-display text-2xl font-semibold text-ink">
                     {p.name}

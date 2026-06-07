@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PRODUCTS, getProduct, formatIDR } from "@/lib/products";
-import { ProductIllustration } from "@/components/product-illustration";
+import { ProductImage } from "@/components/product-image";
 
 type Params = { slug: string };
 
@@ -126,9 +126,13 @@ export default async function ProductPage(props: {
 
           <div className="order-1 lg:order-2 flex justify-center">
             <div className="relative w-full max-w-md rounded-3xl bg-white shadow-xl shadow-primary/10 ring-1 ring-line p-8">
-              <ProductIllustration
-                variant={product.slug as "protein-oatmeal" | "fit-cookie"}
-                className="w-full h-auto"
+              <ProductImage
+                slug={product.slug}
+                name={product.name}
+                image={product.image}
+                className="w-full"
+                priority
+                sizes="(max-width: 1024px) 80vw, 400px"
               />
             </div>
           </div>

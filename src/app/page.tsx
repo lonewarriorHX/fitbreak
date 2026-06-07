@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ProductIllustration } from "@/components/product-illustration";
+import { ProductImage } from "@/components/product-image";
 import { ScrollVideoHero } from "@/components/scroll-video-hero";
+import { StoryImage } from "@/components/story-image";
 import { PRODUCTS, formatIDR } from "@/lib/products";
 
 export default function HomePage() {
@@ -73,9 +74,12 @@ function ProductShowcase() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${bgClass} opacity-50`} aria-hidden />
                 <div className="relative grid sm:grid-cols-5 gap-4 items-center">
                   <div className="sm:col-span-2">
-                    <ProductIllustration
-                      variant={p.slug as "protein-oatmeal" | "fit-cookie"}
-                      className="w-full h-auto max-w-[200px] mx-auto sm:max-w-none"
+                    <ProductImage
+                      slug={p.slug}
+                      name={p.name}
+                      image={p.image}
+                      className="w-full max-w-[200px] mx-auto sm:max-w-none"
+                      sizes="(max-width: 640px) 200px, 240px"
                     />
                   </div>
                   <div className="sm:col-span-3">
@@ -172,17 +176,8 @@ function StoryTeaser() {
   return (
     <section className="section-pad">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 grid gap-10 lg:grid-cols-2 lg:items-center">
-        <div className="relative aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary-light via-cream to-[#FFE3C2] overflow-hidden border border-line">
-          <div className="absolute inset-0 bg-grain opacity-50" aria-hidden />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-6">
-              <div className="text-6xl">🌾</div>
-              <p className="mt-4 font-display text-xl font-semibold text-primary-dark">
-                Story of Us
-              </p>
-            </div>
-          </div>
-        </div>
+        <StoryImage className="aspect-[4/5] rounded-3xl border border-line" />
+
         <div>
           <SectionLabel>Story of Us</SectionLabel>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold tracking-tight">

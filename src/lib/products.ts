@@ -15,6 +15,7 @@ export type Product = {
   ingredients: string;
   variants: ProductVariant[];
   badgeColor: "primary" | "accent" | "cream-deep";
+  image?: string;
 };
 
 export const PRODUCTS: Product[] = [
@@ -51,6 +52,7 @@ export const PRODUCTS: Product[] = [
       { id: "po-matcha", label: "Matcha Latte", priceIDR: 82000 },
     ],
     badgeColor: "primary",
+    image: "/products/protein-oatmeal.jpg",
   },
   {
     slug: "fit-cookie",
@@ -85,6 +87,7 @@ export const PRODUCTS: Product[] = [
       { id: "fc-raisin", label: "Raisin Almond (8 pcs)", priceIDR: 58000 },
     ],
     badgeColor: "accent",
+    image: "/products/fit-cookie.jpg",
   },
 ];
 

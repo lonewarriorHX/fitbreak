@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
+import { StoryImage } from "@/components/story-image";
 
 export const metadata: Metadata = {
   title: "Cerita Kami",
@@ -29,6 +30,9 @@ export default function AboutPage() {
             Namun, sudah cukup terlambat karena penyakit itu sudah datang dan
             meninggalkan bekas.
           </p>
+
+          <StoryImage className="aspect-[4/3] rounded-3xl border border-line my-10" />
+
           <p>
             Beliau suka ngemil makan manis, tapi takut terkena diabetes. Saat
             itu, masih jarang menemukan snack yang{" "}
